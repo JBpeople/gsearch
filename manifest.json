@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Genspark Search",
+  "version": "1.0",
+  "description": "使用@快速搜索Genspark",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*.google.com/*",
+    "*://*.bing.com/*",
+    "*://*.baidu.com/*",
+    "https://www.genspark.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.bing.com/*",
+        "*://*.baidu.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  }
+} 
